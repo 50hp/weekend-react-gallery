@@ -2,17 +2,24 @@ import GalleryItem from './GalleryItem/GalleryItem.jsx';
 
 
 function GalleryList(props) {
-    const galleryList = prop.galleryList;
-
-        return(
-            {gallerList.map(item => (
-                <GalleryItem item={item} key={item.id} />
-            ))}
-            
-
-        );
+    const galleryList = props.galleryList;
+    // console.log(galleryList, 'ping');
+       
 
 
+    return(
+             
+
+             <div>
+              {galleryList.map(item => (
+                  <GalleryItem item={item} 
+                               key={item.id} />
+              ))}
+
+             </div>
+          );
+        
+        
 }
 
 

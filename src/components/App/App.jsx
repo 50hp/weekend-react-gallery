@@ -1,8 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import {useState, useEffect} from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.jsx';
-import axios from 'axios';
 
 function App() {
 
@@ -17,11 +17,22 @@ function App() {
     const getGallery = () => {
         axios.get('/gallery')
         .then((res) => {
-            setGalleryList(res);
+            setGalleryList(res.data);
         }).catch((err) => {
             console.log('error with get request', err);
             alert('error with get request');
         });
+    }
+
+    const putLikes = (id) => {
+        
+
+
+
+
+
+
+
     }
 
 
