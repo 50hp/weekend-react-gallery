@@ -3,8 +3,8 @@ import GalleryItem from './GalleryItem/GalleryItem.jsx';
 
 function GalleryList(props) {
     const galleryList = props.galleryList;
-    // console.log(galleryList, 'ping');
-       
+    const putLikes = props.putLikes;
+
 
 
     return(
@@ -12,7 +12,8 @@ function GalleryList(props) {
 
              <div>
               {galleryList.map(item => (
-                  <GalleryItem item={item} 
+                  <GalleryItem item={item}
+                               putLikes={putLikes}
                                key={item.id} />
               ))}
 

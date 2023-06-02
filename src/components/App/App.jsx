@@ -25,13 +25,12 @@ function App() {
     }
 
     const putLikes = (id) => {
-        
-
-
-
-
-
-
+        axios.put('/gallery/like/' + id)
+        .then((res) => {
+            getGallery();
+        }).catch((err) => {
+            console.log('error with like put request', err);
+        });
 
     }
 
@@ -47,7 +46,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryList={galleryList} />
+        <GalleryList galleryList={galleryList}
+                     putLikes={putLikes}            
+        />
       </div>
     );
 }
