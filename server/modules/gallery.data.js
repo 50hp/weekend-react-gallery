@@ -1,8 +1,23 @@
-const galleryItems = [
-    { id: 1, path: 'images/goat_small_1.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 1 },
-    { id: 2, path: 'images/goat_small_2.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 },
-    { id: 3, path: 'images/goat_small_3.jpg', description: '.ʞɹɐԀ ʅɐuoᴉʇɐN ɹǝᴉɔɐʅ⅁ ʇɐ uǝʞɐʇ ʇɐoƃ ɐ ⅎo oʇoɥԀ', likes: 0 },
-    { id: 4, path: 'images/goat_small_4.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 },
-];
+const pg = require('pg');
+let pool;
 
-module.exports = galleryItems;
+
+if (process.env.DATABASE_URL) {
+    pool = new pg.Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: {
+            rejectUnauthorized: false
+        }
+    });
+}
+
+else {
+    pool = new pg.Pool({
+        host: 'localhost',
+        port: 5432,
+        database: 'react_gallery', 
+    });
+}
+
+module.exports = pool;
+
