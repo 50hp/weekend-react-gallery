@@ -1,7 +1,7 @@
 
 
 function GalleryItem(props) {
-
+const putLikes = props.putLikes;
 const item = props.item;
 
     return (
@@ -9,7 +9,7 @@ const item = props.item;
         <div className="Box">
 
             <img src={item.path}/>
-            <button>I Like This</button>
+            <button onClick={()=> putLikes(item.id)}>I Like This</button>
             <p>{item.likes} people like this!</p>
 
         </div>
