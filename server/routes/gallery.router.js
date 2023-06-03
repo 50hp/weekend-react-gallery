@@ -32,4 +32,20 @@ router.get('/', (req, res) => {
     });
 }); // END GET Route
 
+router.post('/', (req, res) => {
+    let picData = req.body;
+    let queryText = `INSERT INTO pictures ("path", "description") 
+                     VALUES ($1, $2);`
+
+    pool.query(queryText, [picData.url, picData.description])
+    .then((ressponse) => {
+        res.sendStatus(200);
+    }).catch((err) => {
+        res.sendStatus(500);
+        console.log('request for post pic failed', err);
+    });
+});
+
+
+
 module.exports = router;

@@ -36,12 +36,17 @@ function App() {
     }
 
     const addPic = (pic) => {
-        axios.post('/gallery/', pic)
+        axios.post('/galler/', pic);
         .then((res) => {
             getGallery();
         }).catch((err) => {
-            console.log('error with addPic request', err);
-        });
+            console.log('error with addPic request')
+
+        }
+
+
+
+
     }
 
 
@@ -54,7 +59,6 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <InputForm addPic={addPic}/>
         <GalleryList galleryList={galleryList}
                      putLikes={putLikes}            
         />
