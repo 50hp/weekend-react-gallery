@@ -1,4 +1,5 @@
 import GalleryItem from './GalleryItem/GalleryItem.jsx';
+import './GalleryList.css'
 
 
 function GalleryList(props) {
@@ -10,7 +11,7 @@ function GalleryList(props) {
     return(
              
 
-             <div>
+             <div className="container">
               {galleryList.map(item => (
                   <GalleryItem item={item}
                                putLikes={putLikes}

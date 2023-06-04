@@ -55,7 +55,7 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <InputForm addPic={addPic}/>
-        <GalleryList galleryList={galleryList}
+        <GalleryList className="disyplay" galleryList={galleryList}
                      putLikes={putLikes}            
         />
       </div>
