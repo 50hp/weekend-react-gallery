@@ -16,8 +16,6 @@ Problem: Create a gallery web app that uses React.
     Express
     Body Parser
     React
-    <!-- Bootstrap -->
-    <!-- Sweetalert -->
     PG
     PostgreSQL
 
@@ -34,6 +32,6 @@ Problem: Create a gallery web app that uses React.
 
 ## Acknowledgments
 
-	I thank my instructors for their guidance in coming this far.  [Liz Kerber](https://github.com/emkerber ), [Emma Stout](https://github.com/emmastout01), and [Dane Smith](https://github.com/DoctorHowser) are all awesome.  
+I thank my instructors for their guidance in coming this far.  [Liz Kerber](https://github.com/emkerber ), [Emma Stout](https://github.com/emmastout01), and [Dane Smith](https://github.com/DoctorHowser) are all awesome.  
 
 
