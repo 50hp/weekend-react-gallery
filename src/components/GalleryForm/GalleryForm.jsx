@@ -3,17 +3,17 @@ import {useState} from 'react';
 
 function InputForm({addPic}) {
     
-    const [picURL, setPicURL] = useState('');
+    const [file, setFile] = useState();
     const [picDescription, setPicDescription] = useState('');
 
     let pic = {};
     const handleSubmit = (event) => {
-
+        console.log(file);
         event.preventDefault();
 
-        if (picURL && picDescription){
+        if (file && picDescription){
             pic ={
-                url: picURL,
+                file: file,
                 description: picDescription,
             }
 
@@ -25,7 +25,7 @@ function InputForm({addPic}) {
             return;
         }
         
-        setPicURL('');
+        setFile();
         setPicDescription('');
 
 
@@ -35,12 +35,14 @@ function InputForm({addPic}) {
     return (
 
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <div className ='urlInput '>
-                <label htmlFor="urlInput">Name:  </label>
-                <input className ='input'id="urlInput"
-                       value = {picURL}
-                       onChange={e => setPicURL(e.target.value)}/>
+                <label htmlFor="fileInput">Picture:  </label>
+                <input className ='input'id="fileInput"
+                       filename={file}
+                       type="file"
+                       accept="image/png, image/jpeg"
+                       onChange={e => setFile(e.target.files)}/>
                       </div>
                 <div className='description'>
                 <label htmlFor="descriptionInput">Description:</label>
