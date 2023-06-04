@@ -31,7 +31,7 @@ function InputForm({addPic}) {
 
 
     }
-
+//-add input validation for urls
     return (
 
         <div>

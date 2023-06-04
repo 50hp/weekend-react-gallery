@@ -1,0 +1,14 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+
+}
+.Box {
+  margin: 25px;
+  height: 100px;
+  width: 100px;
+  padding: 25px;
+
+}
